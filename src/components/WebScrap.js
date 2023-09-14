@@ -9,6 +9,9 @@ export default function WebScrap() {
     const url = document.getElementById("url").value;
     var tag = document.getElementById("tag").value;
     var element = document.getElementById("element").value;
+    var result = document.getElementById("results");
+    
+
 
     divs ? element = "." + element : element = element
     
@@ -16,7 +19,12 @@ export default function WebScrap() {
 
     axios
       .post("/get-data", { url: url, element: element, tag: tag })
-         .then((response) => {console.log(response.data)})
+         .then((response) => {
+            
+            console.log(response.data)
+            result.value = response.data;
+        
+        })
          .catch((err)=>console.log(err))
   }
 
