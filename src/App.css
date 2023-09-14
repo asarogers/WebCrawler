@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  /* background-color: #f06d06; */
+}
+.webscrap{
+  display: grid;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.webscrapper-item{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.webscraper-content{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+.webscraper-button button{
+  width: 100px;
+}
+.webscrap-body{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.webscrap textarea{
+  width: 250px;
+  height: 300px;
+}
+
+.search-content{
+
+}
+
+.navbar-text{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.navbar{
+  height: 50px;
+  background-color: red;
+  background-image:
+    linear-gradient(
+    to bottom, 
+      red, #f06d06, #faac71, #fdc295
+    );
+  display: flex;
+  justify-content: center;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
