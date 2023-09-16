@@ -9,6 +9,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 require('dotenv').config();
 const fs = require('fs');
+const mysql = require("mysql")
 const writeStream = fs.createWriteStream('devBlog.csv');
 
 
@@ -22,28 +23,40 @@ app.use(
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "ace",
+  password:"A90@1491s",
+  database:"webcrawler"
+})
 
 app.post(
-  "/*",
-  (req, res, next) => {
+  "/*",(req, res, next) => {
     const pwd = req.body.password;
     const {url, element, tag} = req.body;
     const names = []
     console.log(element, url, tag);
+    db.connect((err)=>{
+      if(err){
+        console.log("error")
+        throw err
+      };
+      console.log("Database connected successfully!")
+    })
 
 
-    axios.get(url)
-        .then(resp => {
-            const $ = cheerio.load(resp.data)
-            $(element).each((index, element)=>{
-                const author = $(element).find(tag).attr('href')
-                names.push(author)
-            })
-            res.send(names)
+    // axios.get(url)
+    //     .then(resp => {
+    //         const $ = cheerio.load(resp.data)
+    //         $(element).each((index, element)=>{
+    //             const author = $(element).find(tag).attr('href')
+    //             names.push(author)
+    //         })
+    //         res.send(names)
             
-        }).catch(err => console.error(err))
+    //     }).catch(err => console.error(err))
         
-      }
+       }
 );
 
 //var PORT = process.env.PORT || 3053;
