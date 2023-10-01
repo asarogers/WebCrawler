@@ -9,6 +9,7 @@ body{
 .webscrapper-item{
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 10px;
 }
 
 
@@ -16,6 +17,7 @@ body{
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+
 }
 .webscraper-button button{
   width: 100px;
@@ -61,3 +63,18 @@ body{
   
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.emailBody{
+  width: 40vw;
+  height: 30vh;
+  margin-bottom: 20px;
+}
+
+.email{
+  display: grid;
+}
+
+.selector{
+  margin-bottom: 20px;
+}
+

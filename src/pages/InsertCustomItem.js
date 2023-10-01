@@ -13,12 +13,9 @@ export default function InsertCustomItem() {
     totalPrice: 0,
   }); //empty array
   const dictionary = {};
-  const [divs, setDivs] = useState(false); //boolean variable state
   const [startingPoint, setStartingPoint] = useState(Number);
   const [targetColumn, setTargetColumn] = useState([]);
   const [isClass, setIsClass] = useState(false); //boolean variable state
-  const [tags, setTags] = useState(false); //boolean varaible state
-  const [results, setResults] = useState([]); //empty array state
   const [insideTags, setInsideTags] = useState(false); //boolean varaible state
 
   const customStyles = {
@@ -67,7 +64,7 @@ export default function InsertCustomItem() {
   }, []);
 
   useEffect(() => {
-    console.log(data.selectedData);
+    console.log(data.folder);
   }, [data]);
 
   // useEffect(()=>{//this is a function that is called everytime an object changes
@@ -116,18 +113,6 @@ export default function InsertCustomItem() {
 
         .catch((err) => console.log(err));
     }
-
-    //put it on the screen
-    // const allValues = [];
-    // for (const key in dictionary) {
-    //   if (dictionary.hasOwnProperty(key)) {
-    //     const value = dictionary[key];
-    //     allValues.push(value);
-    //     console.log(value);
-    //   }
-    // }
-
-    //result.value = allValues;
   }
 
   async function postToDatabase() {
