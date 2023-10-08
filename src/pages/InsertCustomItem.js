@@ -14,7 +14,6 @@ export default function InsertCustomItem() {
   }); //empty array
   const dictionary = {};
   const [startingPoint, setStartingPoint] = useState(Number);
-  const [targetColumn, setTargetColumn] = useState([]);
   const [isClass, setIsClass] = useState(false); //boolean variable state
   const [insideTags, setInsideTags] = useState(false); //boolean varaible state
 
@@ -143,7 +142,6 @@ export default function InsertCustomItem() {
               options={data.folder}
               placeholder="Shop by: CATEGORY"
               onChange={(e) => {
-                setTargetColumn(e.label);
                 setData({
                   ...data,
                   selectedData: data.returnedData.filter(

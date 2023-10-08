@@ -64,148 +64,57 @@ Check list
 
 
 
--   Utility Information
 
 -   Sewer: Septic Tank
-
--   Heating & Cooling
-
 -   Has Cooling: Yes
-
 -   Has Heating: Yes
-
--   Financial
-
 -   Tax Lot: 0
-
 -   Tax Block: 0
-
--   Pool Information
-
 -   Has Private Pool: Yes
-
 -   Pool Features: In Ground
-
--   Land Information
-
 -   Water Source: Public
-
--   Property Information
-
 -   New Construction: No
-
 -   Year Built: 1988
-
 -   Living Area: 5,944
-
 -   Has Fireplace: Yes
-
 -   # of Fireplaces: 1
-
 -   Road Surface Type: Concrete
-
--   Lot Information
-
 -   Lot Size Area: 5.5
-
 -   Lot Size Units: Acres
-
 -   Lot Size Square Feet: 239,580
-
--   Bathroom Information
-
--   # of Bathrooms (Full): 5
-
--   # of Bathrooms (1/2): 1
-
--   Room Information
-
 -   # of Rooms: 15
-
--   Basement Information
-
 -   Basement: Basement
-
--   Parking / Garage Information
-
 -   # of Garage Spaces: 2
-
 -   Covered Spaces: 2
-
 -   Has Garage: Yes
-
--   List Price
-
--   $1,350,000
-
--   Style
-
--   Traditional
-
--   5
-
--   Beds
-
--   5.5
-
--   Baths
-
+-   List Price: $1,350,000
+-   Style: Traditional
+-   Beds : 5
+-   Baths: 5.5
 -   Location
-
--   HOA Information
-
 -   Association YN: No
-
--   Community Information
-
 -   Subdivision Name: Metes And Bounds
-
--   Today
-
--   Oct 5, 2023
-
--   Date
-
--   Listed (Active)
-
--   VMLS #21845208
-
--   $1,350,000
-
--   Price
-
--   Jul 20, 2020
-
--   Date
-
--   Sold (Public Records)
-
--   This was part of a multi-property sale.
-
--   Public Records
-
--   $767,000
-
--   Price
-
--   Earliest Date ever sold
-
--   Date
-
--   Sold (MLS) (Sold)
-
--   VMLS #1123886
-
--   $767,000
-
--   Public facts and zoning for 386 Springhill Rd NW
-
--   1988
-
--   Year Renovated
-
+-   Price : $1,350,000
+-   Date : Jul 20, 2020
+-   Price: $767,000
+-   Last Date ever sold : Date
+-   Sold (MLS) (Sold): $767,000
+-   Year Renovated : 1988
 -   Schools(Get Average rating of schools around them)
-
--   Around this home
-
 -   Places - #of places.
+
+
+
+
+# I DON'T KNOW IF WE NEED THESE SO THEY ARE HERE
+-   Around this home
+-   Sold (Public Records)
+-   This was part of a multi-property sale.
+-   Public Records
+-   Listed (Active)
+-   VMLS #21845208
+-   HOA Information
+-   Community Information
+-   Today
+-   Oct 5, 2023
+-   Date

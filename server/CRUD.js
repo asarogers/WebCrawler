@@ -7,17 +7,37 @@ function readFromTable(req, res){
     })
 }
 
-function postIntoTable(req, res){
-    const {columnName, results, university} =  req.body;
-    var msg;
-    results.forEach((url)=>{
-        dbConnection.query(`INSERT INTO scrappedData (url, columnName, University) VALUES ('${url}', '${columnName}', '${university}')`, function (err, result, fields) {
-            if (err) throw err;
-            msg = result;
-        })
+function getTableNames(req, res){
+    dbConnection.query(`SELECT * FROM tablenames`, function (err, result, fields) {
+        if (err) throw err;
+        res.send(result);
     })
-    console.log("posted to the table")
-    res.send(msg);
+}
+
+function postIntoTable(req, res){
+    const {columnName, results, university, database} =  req.body;
+    var msg;
+
+    switch(database){
+        case "scrappedata" :
+            results.forEach((url)=>{
+                dbConnection.query(`INSERT INTO scrappedData (url, columnName, University) VALUES ('${url}', '${columnName}', '${university}')`, function (err, result, fields) {
+                    if (err) throw err;
+                    msg = result;
+                })
+            })
+            console.log("posted to the scrappedata")
+            break;
+        case "tablenames":
+            msg = "tablenames"
+            console.log("posted to tablenames")
+            break;
+        case "rental":
+            msg = "rental"
+            console.log("posted to rental")
+            break;
+    }
+    res.send(msg)
 
 }
 
@@ -39,5 +59,6 @@ function insertIntoTable(req, res){
 module.exports ={
     insertIntoTable: insertIntoTable,
     readFromTable : readFromTable,
-    postIntoTable : postIntoTable
+    postIntoTable : postIntoTable,
+    getTableNames : getTableNames
 }

@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require('dotenv').config();
-const {readFromTable, postIntoTable, insertIntoTable} = require("./CRUD.js")
+const {readFromTable, postIntoTable, insertIntoTable, getTableNames} = require("./CRUD.js")
 const {scrapeData} = require("./scrapeData.js")
 const {sendEmail} = require("./sendEmail.js")
 
@@ -11,7 +11,10 @@ const {sendEmail} = require("./sendEmail.js")
 app.use(cors({origin: "*",}));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get("/get-data",(req, res)=>{readFromTable(req, res)})
+app.get("/get-tableNames",(req, res)=>{getTableNames(req, res)})
+
 app.post("/scrap-data",(req, res, next) => {scrapeData(req, res) });
 app.post("/post-data",(req, res, next) => {postIntoTable(req, res)})
 app.post("/insert-data", (req, res, next)=>{insertIntoTable(req, res)})
