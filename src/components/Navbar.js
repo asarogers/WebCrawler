@@ -6,6 +6,7 @@ export default function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/insert">Insert</Link>
         <Link to="/email">Send email</Link>
+        <Link to="/rental">Rental Scrapper</Link>
     </div>
   );
 }

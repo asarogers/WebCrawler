@@ -18,8 +18,7 @@ export default function WebScrap() {
     var result = document.getElementById("results"); //gets the value of the element called results
     var tag = document.getElementById("tag").value;
     const theTag = document.getElementById("theTag").value;
-    //setResults(result.value)
-
+    //setResults(result.value)a
     axios
       .post("/scrap-data", {
         url: url, //need for url
