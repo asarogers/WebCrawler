@@ -30,7 +30,8 @@ function scrapeData(req, res){
             // })
             // console.log(names.length, names)
 
-            console.log( " tag", tag, "the tag is", theTag)
+            //console.log( " tag", tag, "the tag is", theTag)
+            //console.log("check", check)
             $(check).each((index, elements)=>{
                 var content;
                 //console.log(tag ,"works ater")
@@ -62,7 +63,7 @@ function scrapeData(req, res){
                 }
                 //
                 names.push(content)
-                //console.log(names)
+                console.log(names, "checking")
 
                 //remove anything that is not an email
                 // if(content?.includes("@")){
