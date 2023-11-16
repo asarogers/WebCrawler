@@ -13,20 +13,23 @@ def main():
 
     if connection:
         try:
-            array = scrapFromUrl()
-            for data in array:
-                print("testing")
-                InsertNewRow(table, columnName, data,connection, 1)
-    #         urls = GetAllFromColumn(table, columnName,connection)
-    #         for id in range(9087, (len(urls))):
-    #             url = urls[id][0]
+            # array = scrapFromUrl()
+            # for data in array:
+            #     print("testing")
+            #     InsertNewRow(table, columnName, data,connection, 1)
+            
+            urls = GetAllFromColumn(table, columnName,connection)
+            for id in range(140000, (170000)):
+                url = urls[id][0]
     #         # url = "https://www.realtysouth.com/ListingDetails/3745-SPORTSMAN-LAKE-ROAD-ODENVILLE-AL-35120/1358034"
-    #             dict = ScrapAllFeatures(url)
-    #             table = "rentalmodel"
-    #             response = InsertAllDataIntoNewRow(table,columnName, url, dict,connection, id)
-    #             if response:
-    #                 unresolvedErrors.append(response)
-    #                 print(unresolvedErrors)
+                dict = ScrapAllFeatures(url)
+                print("start = " +str(id))
+
+                response = InsertAllDataIntoNewRow(table,columnName, url, dict,connection, id)
+                
+                if response:
+                    unresolvedErrors.append(response)
+                    print(unresolvedErrors)
         finally:
             # Close the database connection when done
             connection.close()

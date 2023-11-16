@@ -4,7 +4,7 @@ import requests
 
 def scrapFromUrl():
     urlArray = []#716
-    for i in range(400, 500):
+    for i in range(100,200):
         # URL of the webpage you want to scrape
         scrapUrl = 'https://www.realtysouth.com/proxy/getproperties3.aspx?companyid=646&accountid=592873&clientid=0&mlsID=-16&foreclosure=false&sold=None&isbranded=false&mapapproxaddress=true&version=2.5&page=' + str(i) + '&pagesize=250&mapid=279664662131432620&mlssold=SoldExclusive&currency=USD&criteria=searchmls[]-16~geocoords[gquad]36.18702172843971|28.79212654410026|-85.26285197352362|-89.20694377039862~groupproptype[in]200|300|400|800~listingstatuscode[in]2097152~searchmode[]viewport&culture=en'
         # scrapUrl = "https://www.realtysouth.com/proxy/getproperties3.aspx?companyid=646&accountid=592873&clientid=0&mlsID=-16&foreclosure=false&sold=None&isbranded=false&mapapproxaddress=true&version=2.5&page=1&pagesize=250&mapid=279664662131432620&currency=USD&criteria=groupproptype%5Bin%5D200%7Esearchmls%5B%5D%2D16%7Elistingstatuscode%5Bin%5D16384|4209715|521241540|536870912%7Egeocoords%5Bgquad%5D34%2E201836437849195|30%2E929588191879795|%2D84%2E35849692439032|%2D90%2E11129881953192&culture=en"
