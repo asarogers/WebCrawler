@@ -19,7 +19,7 @@ def main():
             #     InsertNewRow(table, columnName, data,connection, 1)
             
             urls = GetAllFromColumn(table, columnName,connection)
-            for id in range(140000, (170000)):
+            for id in range(90821, (110000)):
                 url = urls[id][0]
     #         # url = "https://www.realtysouth.com/ListingDetails/3745-SPORTSMAN-LAKE-ROAD-ODENVILLE-AL-35120/1358034"
                 dict = ScrapAllFeatures(url)
