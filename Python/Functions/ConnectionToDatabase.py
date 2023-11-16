@@ -4,6 +4,7 @@ import mysql.connector
 def get_db_connection():
         
     # Replace these with your own database credentials
+    #192.168.1.229
     host ="localhost"
     user ="ace"
     password ="12345678"
