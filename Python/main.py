@@ -15,6 +15,7 @@ def main():
         try:
             array = scrapFromUrl()
             for data in array:
+                print("testing")
                 InsertNewRow(table, columnName, data,connection, 1)
     #         urls = GetAllFromColumn(table, columnName,connection)
     #         for id in range(9087, (len(urls))):
