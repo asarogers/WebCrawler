@@ -15,23 +15,57 @@ def InsertNewRow(table, columnName, data, connection, id):
             cursor = connection.cursor()
 
             insert = "Insert into " + table +" (" + columnName +") VALUES ('"+ data +"')"
-            print(insert)
-            # cursor.execute(insert)
+            # print(insert)
+            cursor.execute(insert)
 
             # # # Commit the changes
-            # connection.commit()
+            connection.commit()
 
             print("Data inserted successfully.")
 
         except mysql.connector.Error as err:
             print(f"Error: {err}")
             print(f"Insert id= {id} query = {insert}")
+            #what happens if data exceeds the character limit in the database?
+            if err.errno == 1406:
+                #get the length of the data
+                length = len(data)
+                #create function to programmically update the database character limit for the column
+                AlterColumnLength(table, columnName, length, connection, insert, id)
 
 
 #provide the table you wish to insert data
 #provide the name of the columnName you want to insert data
 #provide the data you wish to insert
 #provide the Url as the where condition
+
+def InsertNewRow(table, columnName, data, connection, id):
+    #get the connection
+    
+
+    #check if the connection is successful
+    if connection:
+        try:
+            cursor = connection.cursor()
+
+            insert = "Insert into " + table +" (" + columnName +") VALUES ('"+ data +"')"
+            # print(insert)
+            cursor.execute(insert)
+
+            # # # Commit the changes
+            connection.commit()
+
+            print("Data inserted successfully.")
+
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+            print(f"Insert id= {id} query = {insert}")
+            #what happens if data exceeds the character limit in the database?
+            if err.errno == 1406:
+                #get the length of the data
+                length = len(data)
+                #create function to programmically update the database character limit for the column
+                AlterColumnLength(table, columnName, length, connection, insert, id)
 
 def UpdateRow(table, columnName, data, Url,connection, id):
 
@@ -77,7 +111,7 @@ def UpdateRow(table, columnName, data, Url,connection, id):
                 #get the length of the data
                 length = len(data)
                 #create function to programmically update the database character limit for the column
-                AlterColumnLength(table, columnName, Url, length, connection, insert, id)
+                AlterColumnLength(table, columnName, length, connection, insert, id)
             
             #what happens if primitive is wrong type?
                 #two options here:
@@ -97,7 +131,8 @@ def UpdateRow(table, columnName, data, Url,connection, id):
 def InsertAllDataIntoNewRow(table, columnName, url, dict, connection, id):
         unresolvedErrors = []
         #insert the data into the database, provide table, columnName name, and data
-        InsertNewRow(table, columnName, url, connection, id)
+        # InsertNewRow(table, columnName, url, connection, id)
+
 
         try:
             #loop through all the data in the dictionary
@@ -112,7 +147,6 @@ def InsertAllDataIntoNewRow(table, columnName, url, dict, connection, id):
                 response = (UpdateRow(table, columnName, data, url,connection, id))
                 if response:
                     unresolvedErrors.append(response)
-            # print("Done.")
             return unresolvedErrors
         except AttributeError as err:
             unresolvedErrors.append({"errorCode": err, "syntax":url })
@@ -169,7 +203,7 @@ def AlterColumnType(table, columnName, Url, connection, oldInsert, id):
             print(f"Error: {err}")
             print(f"ALTER TYPE id= {id} query = {insert}")
 
-def AlterColumnLength(table, columnName, Url, length, connection, oldInsert, id):
+def AlterColumnLength(table, columnName, length, connection, oldInsert, id):
     #check if the connection is successful
     if connection:
         try:
@@ -178,7 +212,7 @@ def AlterColumnLength(table, columnName, Url, length, connection, oldInsert, id)
 
         #  print(f"{key.replace(' ', '_')} : {value}")
             insert = "ALTER Table " + table +" MODIFY COLUMN " + columnName+" varchar(" + str(length)+");" 
-            print(insert)
+            print("insert")
             cursor.execute(insert)
             cursor.execute(oldInsert)
 
