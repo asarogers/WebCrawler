@@ -15,11 +15,11 @@ def InsertNewRow(table, columnName, data, connection, id):
             cursor = connection.cursor()
 
             insert = "Insert into " + table +" (" + columnName +") VALUES ('"+ data +"')"
-            # print(insert)
-            cursor.execute(insert)
+            print(insert)
+            # cursor.execute(insert)
 
-            # # Commit the changes
-            connection.commit()
+            # # # Commit the changes
+            # connection.commit()
 
             print("Data inserted successfully.")
 

@@ -4,9 +4,9 @@ import mysql.connector
 def get_db_connection():
         
     # Replace these with your own database credentials
-    host ="192.168.1.111"
+    host ="localhost"
     user ="ace"
-    password ="A90@1491s"
+    password ="12345678"
     database= "webcrawler"
 
     try:
