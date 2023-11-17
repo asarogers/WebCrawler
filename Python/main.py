@@ -19,10 +19,11 @@ def main():
             #     InsertNewRow(table, columnName, data,connection, 1)
             
             urls = GetAllFromColumn(table, columnName,connection)
-            for id in range(90821, (110000)):
+            for id in range(95836, (95837)):
                 url = urls[id][0]
     #         # url = "https://www.realtysouth.com/ListingDetails/3745-SPORTSMAN-LAKE-ROAD-ODENVILLE-AL-35120/1358034"
                 dict = ScrapAllFeatures(url)
+                print(dict)
                 print("start = " +str(id))
                 f = open("lastUsed.txt", "a")
                 f.write("\nstart = " +str(id))
